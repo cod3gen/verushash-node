@@ -240,7 +240,7 @@ void verusHashV2b(const v8::FunctionCallbackInfo<Value>& args) {
     args.GetReturnValue().Set(Nan::NewBuffer(result, 32).ToLocalChecked());
 }
 
-void Init(Handle<Object> exports) {
+void Init(Local<Object> exports) {
   NODE_SET_METHOD(exports, "init", verusInit);
   NODE_SET_METHOD(exports, "update", verusUpdate);
   NODE_SET_METHOD(exports, "digest", verusDigest);
