@@ -44,7 +44,7 @@ void verusUpdate(const v8::FunctionCallbackInfo<Value>& args) {
         );
         return;
     }
-    Local<Object> buffer = args[0]->ToObject();
+    Local<Object> buffer = Nan::To<Object>(args[0]).ToLocalChecked();
     if(!node::Buffer::HasInstance(buffer)) {
         isolate->ThrowException(
             Exception::TypeError(String::NewFromUtf8(isolate, "Invalid buffer objects."))
@@ -92,7 +92,7 @@ void verusHash(const v8::FunctionCallbackInfo<Value>& args) {
         );
         return;
     }
-    Local<Object> buffer = args[0]->ToObject();
+    Local<Object> buffer = Nan::To<Object>(args[0]).ToLocalChecked();
     if(!node::Buffer::HasInstance(buffer)) {
         isolate->ThrowException(
             Exception::TypeError(String::NewFromUtf8(isolate, "Invalid buffer objects."))
@@ -126,7 +126,7 @@ void verusUpdateV2(const v8::FunctionCallbackInfo<Value>& args) {
         );
         return;
     }
-    Local<Object> buffer = args[0]->ToObject();
+    Local<Object> buffer = Nan::To<Object>(args[0]).ToLocalChecked();
     if(!node::Buffer::HasInstance(buffer)) {
         isolate->ThrowException(
             Exception::TypeError(String::NewFromUtf8(isolate, "Invalid buffer objects."))
@@ -187,7 +187,7 @@ void verusHashV2(const v8::FunctionCallbackInfo<Value>& args) {
         );
         return;
     }
-    Local<Object> buffer = args[0]->ToObject();
+    Local<Object> buffer = Nan::To<Object>(args[0]).ToLocalChecked();
     if(!node::Buffer::HasInstance(buffer)) {
         isolate->ThrowException(
             Exception::TypeError(String::NewFromUtf8(isolate, "Invalid buffer objects."))
@@ -218,7 +218,7 @@ void verusHashV2b(const v8::FunctionCallbackInfo<Value>& args) {
         );
         return;
     }
-    Local<Object> buffer = args[0]->ToObject();
+    Local<Object> buffer = Nan::To<Object>(args[0]).ToLocalChecked();
     if(!node::Buffer::HasInstance(buffer)) {
         isolate->ThrowException(
             Exception::TypeError(String::NewFromUtf8(isolate, "Invalid buffer objects."))
